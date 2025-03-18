@@ -12,3 +12,4 @@ You can upload/update any html project using this platform.
 
 # Screenshot
 
+![image](https://github.com/snowie2000/axure-host/blob/master/docs/main.png)
