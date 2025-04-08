@@ -89,10 +89,12 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 
 			// create a new project to overwrite the old one, if no new file is uploaded, the projectPath will be the same as detail.Path
 			ProjectDB.NewProject(detail.Id, &ProjectInfo{
-				Id:   detail.Id,
-				Name: projectName,
-				Path: projectPath,
-				Desc: r.FormValue("desc"),
+				Id:     detail.Id,
+				Name:   projectName,
+				Path:   projectPath,
+				PinYin: r.FormValue("pinyin"),
+				PY:     r.FormValue("py"),
+				Desc:   r.FormValue("desc"),
 			})
 		}
 	case "add":
@@ -130,10 +132,12 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		ProjectDB.NewProject(projectPath, &ProjectInfo{
-			Id:   projectPath,
-			Name: projectName,
-			Path: projectPath,
-			Desc: r.FormValue("desc"),
+			Id:     projectPath,
+			Name:   projectName,
+			Path:   projectPath,
+			PinYin: r.FormValue("pinyin"),
+			PY:     r.FormValue("py"),
+			Desc:   r.FormValue("desc"),
 		})
 	default:
 		http.Error(w, "action can not be empty", http.StatusBadRequest)

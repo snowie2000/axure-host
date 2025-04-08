@@ -15,6 +15,8 @@ type ProjectInfo struct {
 	Path      string `json:"path"`
 	Desc      string `json:"desc"`
 	Date      string `json:"date"`
+	PinYin    string `json:"pinyin"`
+	PY        string `json:"py"`
 	Timestamp int64  `json:"timestamp"`
 }
 
