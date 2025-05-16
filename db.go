@@ -10,14 +10,15 @@ import (
 )
 
 type ProjectInfo struct {
-	Id        string `json:"id"`
-	Name      string `json:"name"`
-	Path      string `json:"path"`
-	Desc      string `json:"desc"`
-	Date      string `json:"date"`
-	PinYin    string `json:"pinyin"`
-	PY        string `json:"py"`
-	Timestamp int64  `json:"timestamp"`
+	Id        string   `json:"id"`
+	Name      string   `json:"name"`
+	Path      string   `json:"path"`
+	Desc      string   `json:"desc"`
+	Date      string   `json:"date"`
+	Tag       []string `json:"tag"`
+	PinYin    string   `json:"pinyin"`
+	PY        string   `json:"py"`
+	Timestamp int64    `json:"timestamp"`
 }
 
 type projectDB map[string]*ProjectInfo

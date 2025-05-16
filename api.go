@@ -95,6 +95,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 				PinYin: r.FormValue("pinyin"),
 				PY:     r.FormValue("py"),
 				Desc:   r.FormValue("desc"),
+				Tag:    r.Form["tag"],
 			})
 		}
 	case "add":
@@ -138,6 +139,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 			PinYin: r.FormValue("pinyin"),
 			PY:     r.FormValue("py"),
 			Desc:   r.FormValue("desc"),
+			Tag:    r.Form["tag"],
 		})
 	default:
 		http.Error(w, "action can not be empty", http.StatusBadRequest)
